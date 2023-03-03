@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:NavSQLWS.Models"
+             xmlns:vm="clr-namespace:NavSQLWS.ViewModels"
+             x:DataType="vm:MainPageViewModel"
+             x:Class="NavSQLWS.Views.MainPage">
+
+    <Grid RowDefinitions="*,auto,auto">
+        <CollectionView Margin="12,0"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding Monkey}"
+                        ItemsSource="{Binding Monkeys}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="1"
+                                 HorizontalItemSpacing="10"
+                                 VerticalItemSpacing="3" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:MonkeyModel">
+                    <Border StrokeShape="RoundRectangle 20">
+                        <Grid ColumnDefinitions="auto, *"
+                              RowDefinitions="*,*"
+                              ColumnSpacing="12">
+                            <Image Grid.RowSpan="2"
+                                   Source="{Binding Image}"
+                                   HeightRequest="100"
+                                   WidthRequest="100" />
+
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   VerticalTextAlignment="Center" />
+
+                            <Label Grid.Column="1"
+                                   Grid.Row="1"
+                                   VerticalTextAlignment="Center"
+                                   Text="{Binding Location}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+        <Button Grid.Row="1"
+                Command="{Binding GoToBasicNavigationCommand}"
+                Text="Refresh"
+                Margin="4,4" />
+
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,auto">
+            <Entry Text="{Binding ToSaveOnDB.Name}"
+                   HorizontalOptions="FillAndExpand" />
+            <Button Grid.Column="1"
+                    Text="Save"
+                    Command="{Binding SaveOnDbCommand}" />
+        </Grid>
+    </Grid>
+</ContentPage>
