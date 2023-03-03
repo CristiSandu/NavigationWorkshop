@@ -1,4 +1,4 @@
-# Workshop MVVM
+# Workshop Navigation and SQLite
 
 Link-uri utile:
  - Inregistrare Workshop 4: https://youtu.be/53MoV21GcOI?wt.mc_id=studentamb_61984
@@ -11,6 +11,7 @@ Link-uri utile:
  - .NET MAUI: Push, Pop, & Pass Objects - https://www.youtube.com/watch?v=8z8qz-PePlc?wt.mc_id=studentamb_61984
  - https://www.youtube.com/watch?v=7ZeZD-iJFQw
  - Build mobile and desktop apps with .NET MAUI- https://learn.microsoft.com/en-us/training/paths/build-apps-with-dotnet-maui?wt.mc_id=studentamb_61984
+ - .NET MAUI local databases - https://learn.microsoft.com/en-us/dotnet/maui/data-cloud/database-sqlite?view=net-maui-7.0#install-the-sqlite-nuget-package?wt.mc_id=studentamb_61984
 
 ## Homework 
 
